@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>SpringBootDemo</title>
+		
+		<link rel="stylesheet" type="text/css" href="./css/layout-style.css">
+		<link rel="stylesheet" type="text/css" href="./css/tab-style.css">
+		<link rel="stylesheet" type="text/css" href="./css/table-style.css">
+		
+		<script src="./js/tab-nav.js"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+		
+		<script src="./js/app.js"></script>
+		
+	</head>
+	<body ng-app="mySpringPOC" ng-controller="mySpringPOCController">
+		<header>
+			<div class="tab">
+				<button class="tablinks" onclick="openTab(event, 'OpenWeather')">Weather </button>
+				<button class="tablinks" onclick="openTab(event, 'Mongo')">Mongo </button>
+			</div>
+			
+			<div id="OpenWeather" class="tabcontent" >
+				<h3>Geo Location Info - {{ cityName }} , {{ countryCode }}</h3> 
+				Coords : ({{latitude}},{{longitude}}) <br/>
+				Temperature : {{ temperature }}	<br/>
+				Min : {{ temperatureMin }} &nbsp; Max : {{ temperatureMax }}
+			</div>
+
+			<div id="Mongo" class="tabcontent">
+				<h3>Mongo Database Content</h3>
+				<table id="table">
+					  <tr>
+					    <th>Book Id</th>
+					    <th>Total Number of Ratings</th>
+					    <th>Rating Value</th>
+					  </tr>
+					  <tr ng-repeat="record in dbRecords">
+					  	<td> {{ record.book_id }} </td>
+					  	<td> {{ record.ratingcount }} </td>
+					  	<td> {{ record.ratingval }}</td>
+					  </tr>
+				</table>
+			</div>
+			
+		</header>
+		<footer>
+			<p>&copy; SpringBootDemo - Infosys Ltd 2019-20</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name : SpringBootMongo
+  profiles:
+    active : dev
+
+server:
+  port : 9100
+  
+---
+spring:
+   profile: dev
+   data:
+     mongodb:
+       host : localhost
+       port : 27017
+       database : test
+       
+apikey : 39cf3e73db67d547ed340db0e31ed438
+---
